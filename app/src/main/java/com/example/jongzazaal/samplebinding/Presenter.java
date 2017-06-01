@@ -10,7 +10,15 @@ import android.widget.Toast;
  */
 
 public class Presenter {
+
+    private Employee employee;
+    public Presenter(Employee employee) {
+        this.employee = employee;
+    }
+
     public void click(View v){
-        Log.d("aaaaaaaa", "click: ");
+        Log.d("Presenter", "click: "+employee.getFirstName()+"//"+employee.getLastName()+"//"+employee.getAge());
+
+        Employee.getInstance().setAge(Employee.getInstance().getAge()+1);
     }
 }

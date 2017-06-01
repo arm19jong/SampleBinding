@@ -18,11 +18,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        final Employee emp = new Employee("fName", "lName", 21);
-        binding.setEmp(emp);
+//        Employee emp = new Employee("fName", "lName", 21);
+
+        Employee.getInstance().setAge(1);
+        binding.setEmp(Employee.getInstance());
 
 
-        binding.setPresenter(new Presenter());
+        binding.setPresenter(new Presenter(Employee.getInstance()));
 //        fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
