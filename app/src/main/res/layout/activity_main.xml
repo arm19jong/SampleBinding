@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="emp"
+            type="com.example.jongzazaal.samplebinding.Employee"/>
+        <variable
+            name="presenter"
+            type="com.example.jongzazaal.samplebinding.Presenter"/>
+
+    </data>
+    <android.support.constraint.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.jongzazaal.samplebinding.MainActivity">
+
+        <android.support.design.widget.TextInputEditText
+            android:hint="FirstName"
+            android:id="@+id/firstName"
+            android:text="@{emp.firstName}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/age"
+            app:layout_constraintVertical_bias="0.766" />
+        <android.support.design.widget.TextInputEditText
+            android:hint="LastName"
+            android:id="@+id/lastName"
+            android:text="@{emp.lastName}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="169dp"
+            app:layout_constraintLeft_toRightOf="@+id/firstName"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintHorizontal_bias="0.466" />
+        <android.support.design.widget.TextInputEditText
+            android:hint="age"
+            android:inputType="number"
+            android:id="@+id/age"
+            android:text="@{String.valueOf(emp.age)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@+id/floatingActionButton"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="200dp"
+            app:layout_constraintHorizontal_bias="0.452" />
+        <android.support.design.widget.FloatingActionButton
+
+            android:onClick="@{presenter::click}"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:id="@+id/floatingActionButton"
+            android:layout_marginRight="91dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="183dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/lastName"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
